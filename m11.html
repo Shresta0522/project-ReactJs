@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+    <title>
+        Hello
+    </title>
+    <style></style>
+    <link rel="stylesheet" href="m11.css">
+    
+</head>
+<body>
+    <div  class="row">
+        <div class="column">
+          <div class="card">
+            <h3>BMI Calculator</h3>
+            <p  id="bmicalculator"></p>
+            
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <h3>Simple Calculator</h3>
+            <div id="simplecalculator" ></div>
+            
+            <button id="result" type="button">Result</button>
+          </div>
+          
+        </div>
+      </div>
+    
+    <script type="text/babel">
+        
+        class Bmi extends React.Component{
+            
+            render() {
+                return (
+                <div id="body">
+                   <input id="kg" type="number" />Kg
+                   <p><h3>Height</h3></p>
+                   <input id="feet" type="number" />ft
+                   <br/>
+                   <input id="inches" type="number" />in<br/>
+                   <br/>
+                    <button id="submitbtn" onclick="{this.calculation}">Submit</button><br/>
+                    <br/>
+                   <input id="inches" type="text" />
+                    <p>BMI = Weight (kg)/Height (m)2</p>
+
+                </div>
+
+                );
+            }
+
+            // calculation =(){
+            //     document.getElementById(submitbtn)
+
+            // }
+        }
+        ReactDOM.render(<Bmi />,document.querySelector("#bmicalculator"));
+
+        class Calci extends React.Component{
+            
+            render() {
+                return (
+                    <div  id="body1">
+                        <h3>Input1</h3>
+                        <input id="num1" type="number" />
+                        <h3>Input2</h3>
+                        <input id="num2" type="number" /><br/>
+                        <br/>
+                        <button  onclick="{this.addition}">+</button>
+                        <button id="sub_btn" onclick="{this.subraction}">-</button>
+                        <button id="multiply_btn" onclick="{this.multiplication}">*</button>
+                        <button id="divide_btn" onclick="{this.division}">/</button>
+                        <br/>
+                        <br/>
+                        <input id="inches" type="text" />
+
+                    </div>
+                );
+            }
+
+            addition=() =>{
+                document.getElementById("result").innerHTML=document.getElementById("num1")[0].value+document.getElementById("num2")[0].value;
+                // console.log(n1);
+            }
+        }
+        ReactDOM.render(<Calci />,document.querySelector("#simplecalculator"));
+    </script>
+</body>
+</html>
