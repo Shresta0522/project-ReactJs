@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+    <title>
+        Hello
+    </title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        /* Create two equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 50%;
+          padding: 10px;
+          height: 300px; /* Should be removed. Only for demonstration */
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        </style>
+</head>
+<body>
+    <div id="root" class="row">
+        <div id="colmn1" class="column" style="background-color:#aaa; border: 1px solid;">
+          <h2>Column 1</h2>
+          <p>Some text..</p>
+        </div>
+        <div id="colmn2" class="column" style="background-color:#bbb; border: 1px solid; ">
+          <h2>Column 2</h2>
+          <p>Some text..</p>
+        </div>
+      </div>
+    
+    <script type="text/babel">
+        
+        class Hello extends React.Component{
+            
+            render() {
+                return (
+                    <h1>
+                        Hello!!!
+                    </h1>
+
+                );
+            }
+        }
+        ReactDOM.render(<Hello />,document.querySelector("#column2"));
+    </script>
+</body>
+</html>
